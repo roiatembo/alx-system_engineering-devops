@@ -1,1 +1,1 @@
-scripts with permissions
+added a script with automatic git push
