@@ -1,1 +1,0 @@
-Redirectons in bash script

@@ -1,1 +1,1 @@
-added a script with automatic git push
+Redirectons in bash script
