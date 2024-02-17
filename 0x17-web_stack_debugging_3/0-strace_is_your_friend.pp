@@ -1,7 +1,4 @@
-file { '/var/www/html/index.php':
-  ensure  => file,
-  owner   => 'www-data',
-  group   => 'www-data',
-  mode    => '0644',
+# fixing wordpress site
+exec { 'fix-wordpress':
+  command => '/path/to/fix-wordpress-script.sh',
 }
-
