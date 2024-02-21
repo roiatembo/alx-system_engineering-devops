@@ -1,11 +1,11 @@
-file_line { 'Turn off passwd auth':
+file { '/home/roia/.ssh/config':
     ensure  => present,
-    path    => '/etc/ssh/ssh_config',
-    line    => '    PasswordAuthentication no',
+    content => "Host 54.89.26.36\n\
+                IdentityFile ~/.ssh/school\n\
+                PreferredAuthentications publickey\n\
+                PasswordAuthentication no\n",
+    mode    => '0644',
+    owner   => 'ubuntu',
+    group   => 'ubuntu',
 }
 
-file_line { 'Declare identity file':
-  ensure => 'present',
-  path   => '/etc/ssh/ssh_config',
-  line   => '    IdentityFile ~/.ssh/school',
-}
