@@ -1,11 +1,11 @@
-file { '/home/ubuntu/.ssh/config':
+file_line { 'Turn off passwd auth':
     ensure  => present,
-    content => "Host 54.89.26.36\n\
-                IdentityFile ~/.ssh/school\n\
-                PreferredAuthentications publickey\n\
-                PasswordAuthentication no\n",
-    mode    => '0644',
-    owner   => 'ubuntu',
-    group   => 'ubuntu',
+    path    => '/etc/ssh/ssh_config',
+    line    => '    PasswordAuthentication no',
 }
 
+file_line { 'Declare identity file':
+  ensure => 'present',
+  path   => '/etc/ssh/ssh_config',
+  line   => '    IdentityFile ~/.ssh/school',
+}
